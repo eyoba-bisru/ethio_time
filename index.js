@@ -21,7 +21,45 @@ changeButtonEnAm.addEventListener('click', () => {
             inputValue -= 18
     }
 
+    if (isNaN(inputValue)) {
+        outputEnAm.value = "በትክክል አስገባ"
+    } else {
+        outputEnAm.value = amharicAmPm + " " + inputValue + inputEnAm.value.substring(2) + " ሰአት"
+    }
 
-    outputEnAm.value = amharicAmPm + " " + inputValue + inputEnAm.value.substring(2) + " ሰአት"
+
 
 })
+
+const inputAmEn = document.querySelector(".amtoen .am input")
+const outputAmEn = document.querySelector(".amtoen .en input")
+const changeButtonAmEn = document.querySelector(".amtoen button")
+const selectAm = document.getElementById("am")
+
+
+changeButtonAmEn.addEventListener('click', () => {
+    const selectValue = selectAm.value
+    const inputValue = inputAmEn.value
+    const splitValue = inputValue.split(":")
+    let hour = parseInt(splitValue[0])
+
+    if (parseInt(splitValue[1]) >= 60) {
+        return outputAmEn.value = "Please enter the correct time"
+    }
+
+    if (selectValue === 'ጠ') {
+        if ((hour >= 1 && hour < 6) || hour == 12) {
+            if (hour == 12) {
+                hour = "0" + (hour - 6)
+                return outputAmEn.value = hour + ":" + splitValue[1] + " AM"
+            }
+            hour += 6
+            hour = hour < 10 ? ("0" + hour) : hour
+
+            return outputAmEn.value = hour + ":" + splitValue[1] + " AM"
+        } else {
+            outputAmEn.value = "Please enter the correct time"
+        }
+    }
+})
+
