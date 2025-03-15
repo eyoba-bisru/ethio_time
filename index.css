@@ -1,32 +1,40 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .inner {
-    display: flex;
-    gap: 4rem;
-    width: fit-content;
-    margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  width: fit-content;
+  margin: 0 auto;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column-reverse;
+  }
 }
 
-.form-control, .form-select {
-    display: inline;
+.form-control,
+.form-select {
+  display: inline;
 }
 
-.amtoen, .entoam {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    gap: 1rem;
+.amtoen,
+.entoam {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
 }
