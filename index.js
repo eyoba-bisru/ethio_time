@@ -12,14 +12,16 @@ changeButtonEnAm.addEventListener('click', () => {
     if (index === 0) {
         inputValue += 6
     } else if (index === 1) {
-        inputValue -= 6
+        inputValue === 6 ? inputValue += 6 :
+            inputValue -= 6
     } else if (index === 2) {
         inputValue -= 6
     } else {
-        inputValue
+        inputValue === 18 ? inputValue -= 6 :
+            inputValue -= 18
     }
 
 
-    outputEnAm.value = amharicAmPm + " " + inputValue + inputEnAm.value.substring(2)
+    outputEnAm.value = amharicAmPm + " " + inputValue + inputEnAm.value.substring(2) + " ሰአት"
 
 })
