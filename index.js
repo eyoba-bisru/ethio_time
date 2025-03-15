@@ -91,5 +91,20 @@ changeButtonAmEn.addEventListener('click', () => {
             outputAmEn.value = "Please enter the correct time"
         }
     }
+
+    if (selectValue === 'ሌ') {
+        if ((hour >= 7 && hour < 12) || hour == 6) {
+            if (hour == 6) {
+                hour = (hour + 6)
+                return outputAmEn.value = hour + ":" + splitValue[1] + " AM"
+            }
+            hour -= 6
+            hour = "0" + hour
+
+            return outputAmEn.value = hour + ":" + splitValue[1] + " AM"
+        } else {
+            outputAmEn.value = "Please enter the correct time"
+        }
+    }
 })
 
